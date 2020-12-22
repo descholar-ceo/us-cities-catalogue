@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import sampleBg from '../assets/images/washinton-dc-pic.jpg';
 
 const Details = ({ cities, match: { params } }) => {
   const { city: selectedCity } = params;
@@ -14,7 +15,8 @@ const Details = ({ cities, match: { params } }) => {
     state,
   } = myCity[0];
   return (
-    <div>
+    <div className="list-one-city">
+      <img src={sampleBg} alt="washington" />
       <h1>{city}</h1>
       <h2>{population}</h2>
       <h3>{growthFrom2000To2013}</h3>
@@ -27,11 +29,7 @@ const Details = ({ cities, match: { params } }) => {
 
 Details.propTypes = {
   cities: PropTypes.arrayOf(PropTypes.object).isRequired,
-  match: PropTypes.shape({
-    params: PropTypes.objectOf({
-      city: PropTypes.string,
-    }),
-  }).isRequired,
+  match: PropTypes.arrayOf().isRequired,
 };
 
 const mapStateToProps = state => ({ cities: state.cities });
