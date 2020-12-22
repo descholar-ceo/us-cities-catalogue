@@ -13,12 +13,12 @@ export const getCitiesAction = () => dispatch => {
     .catch(err => err.response.data);
 };
 
-export const filterCity = filter => ({
-  filter,
+export const filterCity = mFilter => ({
+  mFilter,
   type: FILTER_CITY,
 });
 
-export const displayOneCity = city => ({
+export const displayOneCity = city => dispatch => dispatch({
   type: DISPLAY_DETAILS_OF_A_CITY,
   city,
 });

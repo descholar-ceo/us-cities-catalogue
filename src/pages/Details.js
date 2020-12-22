@@ -1,33 +1,27 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { filterCity } from '../redux/actions';
 
-const Details = ({ filterOneCity, match: { params } }) => {
-  const { city } = params;
-  filterOneCity(city);
+const Details = ({ cities, match: { params } }) => {
+  const { city: selectedCity } = params;
+  const myCity = cities.filter(city => city.city === selectedCity);
+  const { city, population } = myCity[0];
   return (
-    <h1>mCity</h1>
+    <div>
+      <h1>{city}</h1>
+      <h2>{population}</h2>
+    </div>
   );
 };
 
 Details.propTypes = {
-  // city: PropTypes.shape({
-  //   city: PropTypes.string,
-  //   population: PropTypes.string,
-  //   growth_from_2000_to_2013: PropTypes.string,
-  //   latitude: PropTypes.number,
-  //   longitude: PropTypes.number,
-  //   rank: PropTypes.string,
-  //   state: PropTypes.string,
-  // }).isRequired,
+  cities: PropTypes.arrayOf(PropTypes.object).isRequired,
   match: PropTypes.shape({
     params: PropTypes.objectOf({
       city: PropTypes.string,
     }),
   }).isRequired,
-  filterOneCity: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({ filterOneCity: city => dispatch(filterCity(city)) });
+const mapStateToProps = state => ({ cities: state.cities });
 
-export default connect(null, mapDispatchToProps)(Details);
+export default connect(mapStateToProps, null)(Details);
