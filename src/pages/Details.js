@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 
-const Details = ({ city }) => {};
+const Details = ({ city }) => {
+  const { city: mCity } = city;
+  return (
+    <h1>{mCity}</h1>
+  );
+};
 
 Details.propTypes = {
   city: PropTypes.shape({
