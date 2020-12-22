@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import sampleBg from '../assets/images/washinton-dc-pic.jpg';
 
 const City = ({ city }) => {
@@ -6,14 +7,18 @@ const City = ({ city }) => {
   return (
     <div className="list-one-city">
       <img src={sampleBg} alt="washington" />
-      <div>
+      <Link to={{
+        pathname: '/details',
+        state: { city },
+      }}
+      >
         <h1>{mCity}</h1>
         <h2>
           Population:
           {' '}
           {population}
         </h2>
-      </div>
+      </Link>
     </div>
   );
 };
