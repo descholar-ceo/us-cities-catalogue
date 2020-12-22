@@ -1,20 +1,21 @@
 import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { getCitiesAction } from '../redux/actions';
 
-const AllCities = () => (
-  <div className="global-container">
-    <h1>Hello guys!</h1>
-  </div>
-);
-// AllCities.propTypes = {
-//   getAllCities: PropTypes.func.isRequired,
-// };
+const AllCities = ({ getCitiesAction }) => {
+  const cities = getCitiesAction();
+  console.log(cities);
+  return (
+    <div className="global-container">
+      <h1>Hello guys!</h1>
+    </div>
+  );
+};
+
+AllCities.propTypes = {
+  getCitiesAction: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({ cities: state.cities });
 
-const mapDispatchToProps = dispatch => ({
-  getAllCities: () => dispatch(getCitiesAction()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(AllCities);
+export default connect(mapStateToProps, { getCitiesAction })(AllCities);

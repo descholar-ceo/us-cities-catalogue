@@ -8,7 +8,6 @@ const middlewareEnhancer = applyMiddleware(...middleware);
 
 const initialState = {
   cities: [],
-  filter: 'All',
 };
 
 const store = createStore(rootReducer, initialState, composeWithDevTools(middlewareEnhancer));

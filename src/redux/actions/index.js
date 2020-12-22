@@ -1,16 +1,16 @@
 import axios from 'axios';
 import { FILTER_CITY, GET_ALL_CITIES } from './actionsTypes';
 
-export const getCitiesAction = async () => {
-  const baseApiUrl = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
-  const cities = await axios.get(baseApiUrl)
-    .then(result => result.data)
+export const getCitiesAction = () => dispatch => {
+  const sampleCitiesURL = 'https://gist.githubusercontent.com/descholar-ceo/9b11200f0a83417cbdbd2057afbdf855/raw/f024c7a831ac266ce0dea53683853daf4b6a6ab5/us-cities.json';
+  axios.get(sampleCitiesURL)
+    .then(result => {
+      dispatch({
+        cities: result.data,
+        type: GET_ALL_CITIES,
+      });
+    })
     .catch(err => err.response.data);
-
-  return ({
-    type: GET_ALL_CITIES,
-    cities,
-  });
 };
 
 export const filterCity = filter => ({
