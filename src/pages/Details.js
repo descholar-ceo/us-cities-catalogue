@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const Details = ({ city }) => {
   const { city: mCity } = city;
@@ -19,4 +20,6 @@ Details.propTypes = {
   }).isRequired,
 };
 
-export default Details;
+const mapStateToProps = state => ({ city: state.city });
+
+export default connect(mapStateToProps, null)(Details);
