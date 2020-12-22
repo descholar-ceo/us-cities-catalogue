@@ -8,7 +8,11 @@ const City = ({ city }) => {
       <img src={sampleBg} alt="washington" />
       <div>
         <h1>{mCity}</h1>
-        <h2>{population}</h2>
+        <h2>
+          Population:
+          {' '}
+          {population}
+        </h2>
       </div>
     </div>
   );
