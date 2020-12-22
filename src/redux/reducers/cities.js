@@ -4,7 +4,7 @@ const initialState = {
   cities: [],
 };
 
-const bookReducer = (state = initialState, action) => {
+const cityReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_CITIES:
       return [
@@ -15,4 +15,4 @@ const bookReducer = (state = initialState, action) => {
   }
 };
 
-export default bookReducer;
+export default cityReducer;
