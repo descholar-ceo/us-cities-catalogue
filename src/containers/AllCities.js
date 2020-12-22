@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import City from '../components/City';
 
 const AllCities = ({ cities }) => {
-  console.log(cities);
+  const cityRows = cities.map((currCity, index) => <City key={`city-num${index + 1}`} city={currCity} />);
   return (
     <div className="global-container">
-      <h1>Hello guys!</h1>
+      {cityRows}
     </div>
   );
 };
