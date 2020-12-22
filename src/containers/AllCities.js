@@ -15,6 +15,6 @@ AllCities.propTypes = {
   cities: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-const mapStateToProps = state => ({ cities: state.cities });
+const mapStateToProps = state => ({ cities: state.cities.cities });
 
 export default connect(mapStateToProps, null)(AllCities);
