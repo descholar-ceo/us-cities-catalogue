@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import sampleBg from '../assets/images/washinton-dc-pic.jpg';
 
-const City = ({ city, selectCity }) => {
+const City = ({ city }) => {
   const { city: mCity, population } = city;
   return (
     <div className="list-one-city">
       <img src={sampleBg} alt="washington" />
-      <Link onClick={selectCity()} to="/details">
+      <Link to={`/details/${mCity}`}>
         <h1>{mCity}</h1>
         <h2>
           Population:
@@ -29,7 +29,6 @@ City.propTypes = {
     rank: PropTypes.string,
     state: PropTypes.string,
   }).isRequired,
-  selectCity: PropTypes.func.isRequired,
 };
 
 export default City;

@@ -6,7 +6,7 @@ import Fourofourpage from '../pages/Fourofourpage';
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route exact path="/details" component={Details} />
+    <Route exact path="/details/:city" component={Details} />
     <Route component={Fourofourpage} />
   </Switch>
 );

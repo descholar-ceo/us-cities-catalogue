@@ -1,25 +1,28 @@
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
-const Details = ({ city }) => {
-  const { city: mCity } = city;
+const Details = ({ match: { params } }) => {
+  // const { city: mCity } = city;
+  console.log(params);
   return (
-    <h1>{mCity}</h1>
+    <h1>mCity</h1>
   );
 };
 
 Details.propTypes = {
-  city: PropTypes.shape({
-    city: PropTypes.string,
-    population: PropTypes.string,
-    growth_from_2000_to_2013: PropTypes.string,
-    latitude: PropTypes.number,
-    longitude: PropTypes.number,
-    rank: PropTypes.string,
-    state: PropTypes.string,
+  // city: PropTypes.shape({
+  //   city: PropTypes.string,
+  //   population: PropTypes.string,
+  //   growth_from_2000_to_2013: PropTypes.string,
+  //   latitude: PropTypes.number,
+  //   longitude: PropTypes.number,
+  //   rank: PropTypes.string,
+  //   state: PropTypes.string,
+  // }).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.objectOf({
+      city: PropTypes.string,
+    }),
   }).isRequired,
 };
 
-const mapStateToProps = state => ({ city: state.city });
-
-export default connect(mapStateToProps, null)(Details);
+export default Details;
