@@ -1,9 +1,9 @@
-import AllCities from '../containers/AllCities';
+import Home from '../pages/Home';
 
 function App() {
   return (
     <div>
-      <AllCities />
+      <Home />
     </div>
   );
 }
