@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { filterCity } from '../redux/actions';
 
-const Details = ({ match: { params } }) => {
-  // const { city: mCity } = city;
-  console.log(params);
+const Details = ({ filterOneCity, match: { params } }) => {
+  const { city } = params;
+  filterOneCity(city);
   return (
     <h1>mCity</h1>
   );
@@ -23,6 +25,9 @@ Details.propTypes = {
       city: PropTypes.string,
     }),
   }).isRequired,
+  filterOneCity: PropTypes.func.isRequired,
 };
 
-export default Details;
+const mapDispatchToProps = dispatch => ({ filterOneCity: city => dispatch(filterCity(city)) });
+
+export default connect(null, mapDispatchToProps)(Details);
