@@ -9,6 +9,12 @@ body {
   width: 100vw;
 }
 
+header {
+  display: grid;
+  place-items: center;
+  height: 100px;
+}
+
 .list-one-city {
   width: 100%;
   height: 40vh;
@@ -23,22 +29,25 @@ body {
 
   a {
     position: relative;
-    top: -50px;
+    top: -80px;
     display: grid;
     grid-template-rows: 1fr 1fr;
     background-color: rgba(0, 0, 0, 0.8);
     color: rgb(255, 255, 255);
+    height: 80px;
 
     h1 {
       font-size: 1.1rem;
-      padding: 0.3rem;
       text-transform: uppercase;
+      display: flex;
+      place-items: center;
     }
 
     h2 {
       font-size: 0.8rem;
-      padding: 0.3rem;
       color: rgb(206, 206, 206);
+      display: flex;
+      place-items: center;
     }
   }
 }
