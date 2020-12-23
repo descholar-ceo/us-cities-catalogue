@@ -1,27 +1,53 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { FaHome, FaSearch } from 'react-icons/fa';
+import { connect } from 'react-redux';
+import { filterCity } from '../redux/actions';
+import { handleSearchQuerySubmit } from '../helpers/filterHelper';
 
-const NavBar = () => (
-  <div className="header">
-    <h3>
-      <Link to="/">UsCities</Link>
-    </h3>
-    <div className="nav">
-      <div>
-        <NavLink to="/">
-          <FaHome className="home-icon" />
-        </NavLink>
-      </div>
-      <div>
-        <form>
-          <input type="text" name="searchQuery" placeholder="City or State" />
-          <button type="submit">
-            <FaSearch />
-          </button>
-        </form>
+const NavBar = ({ getSearchQuery }) => {
+  const [state, setState] = useState({ searchQuery: '' });
+  const handleSearchQueryChange = event => {
+    event.preventDefault();
+    setState({ searchQuery: event.target.value });
+    getSearchQuery(state.searchQuery);
+  };
+  return (
+    <div className="header">
+      <h3>
+        <Link to="/">UsCities</Link>
+      </h3>
+      <div className="nav">
+        <div>
+          <NavLink to="/">
+            <FaHome className="home-icon" />
+          </NavLink>
+        </div>
+        <div>
+          <form onSubmit={() => handleSearchQuerySubmit(state, getSearchQuery)}>
+            <input
+              type="text"
+              onChange={event => handleSearchQueryChange(event)}
+              value={state.searchQuery}
+              placeholder="City or State"
+            />
+            <button type="submit">
+              <FaSearch />
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
-export default NavBar;
+NavBar.propTypes = {
+  getSearchQuery: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch => ({
+  getSearchQuery: searchQuery => dispatch(filterCity(searchQuery)),
+});
+
+export default connect(null, mapDispatchToProps)(NavBar);
