@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { Fragment } from 'react';
 import { connect } from 'react-redux';
 import sampleBg from '../assets/images/washinton-dc-pic.jpg';
 import NavBar from '../containers/NavBar';

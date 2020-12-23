@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import AllCities from '../containers/AllCities';
 import NavBar from '../containers/NavBar';
 
