@@ -22,6 +22,14 @@ const Details = ({ cities, match: { params } }) => {
           <span>City: </span>
           <span>{city}</span>
         </h1>
+        <h6>
+          <span>State: </span>
+          <span>{state}</span>
+        </h6>
+        <h5>
+          <span>Rank: </span>
+          <span>{rank}</span>
+        </h5>
         <h2>
           <span>Population: </span>
           <span>{population}</span>
@@ -34,14 +42,6 @@ const Details = ({ cities, match: { params } }) => {
           <span>Location: </span>
           <span>{`(${latitude}, ${longitude})`}</span>
         </h4>
-        <h5>
-          <span>Rank: </span>
-          <span>{rank}</span>
-        </h5>
-        <h6>
-          <span>State: </span>
-          <span>{state}</span>
-        </h6>
       </div>
     </div>
   );
