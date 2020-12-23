@@ -1,15 +1,20 @@
 import { NavLink } from 'react-router-dom';
+import { FaHome, FaSearch } from 'react-icons/fa';
 
 const NavBar = () => (
   <header>
     <nav>
-      <NavLink to="/">Math Magicians</NavLink>
       <div>
-        <NavLink to="/">Home</NavLink>
-        <span> | </span>
-        <NavLink to="/calculator">Calculator</NavLink>
-        <span> | </span>
-        <NavLink to="/quotes">Quotes</NavLink>
+        <FaHome />
+        <NavLink to="/">UsCities</NavLink>
+      </div>
+      <div>
+        <form>
+          <input type="text" name="searchQuery" />
+          <button type="submit">
+            <FaSearch />
+          </button>
+        </form>
       </div>
     </nav>
   </header>
