@@ -5,8 +5,15 @@ import SearchForm from '../components/SeacrcForm';
 
 const NavBar = ({ renderedComponent }) => {
   const isFormRendered = renderedComponent === 'all-cities' ? (
-    <div>
-      <SearchForm />
+    <div className="nav">
+      <div>
+        <NavLink to="/">
+          <FaHome className="home-icon" />
+        </NavLink>
+      </div>
+      <div>
+        <SearchForm />
+      </div>
     </div>
   ) : '';
   return (
@@ -14,14 +21,7 @@ const NavBar = ({ renderedComponent }) => {
       <h3>
         <Link to="/">UsCities</Link>
       </h3>
-      <div className="nav">
-        <div>
-          <NavLink to="/">
-            <FaHome className="home-icon" />
-          </NavLink>
-        </div>
-        {isFormRendered}
-      </div>
+      {isFormRendered}
     </div>
   );
 };
