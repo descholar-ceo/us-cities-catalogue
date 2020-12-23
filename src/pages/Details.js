@@ -34,7 +34,7 @@ const Details = ({ cities, match: { params } }) => {
           <span>Population: </span>
           <span>{population}</span>
         </p>
-        <p>
+        <p className="growth-p">
           <span>Growth between 2000 and 2013: </span>
           <span>{growthFrom2000To2013}</span>
         </p>
