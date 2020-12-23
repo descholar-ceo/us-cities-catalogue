@@ -18,12 +18,30 @@ const Details = ({ cities, match: { params } }) => {
     <div className="city-details-conatiner">
       <img src={sampleBg} alt="washington" />
       <div>
-        <h1>{city}</h1>
-        <h2>{population}</h2>
-        <h3>{growthFrom2000To2013}</h3>
-        <h4>{`(${latitude}, ${longitude})`}</h4>
-        <h5>{rank}</h5>
-        <h6>{state}</h6>
+        <h1>
+          <span>City: </span>
+          <span>{city}</span>
+        </h1>
+        <h2>
+          <span>Population: </span>
+          <span>{population}</span>
+        </h2>
+        <h3>
+          <span>Growth between 2000 and 2013: </span>
+          <span>{growthFrom2000To2013}</span>
+        </h3>
+        <h4>
+          <span>Location: </span>
+          <span>{`(${latitude}, ${longitude})`}</span>
+        </h4>
+        <h5>
+          <span>Rank: </span>
+          <span>{rank}</span>
+        </h5>
+        <h6>
+          <span>State: </span>
+          <span>{state}</span>
+        </h6>
       </div>
     </div>
   );
