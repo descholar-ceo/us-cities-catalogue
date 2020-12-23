@@ -15,7 +15,7 @@ const Details = ({ cities, match: { params } }) => {
     state,
   } = myCity[0];
   return (
-    <div className="list-one-city">
+    <div className="city-details-conatiner">
       <img src={sampleBg} alt="washington" />
       <h1>{city}</h1>
       <h2>{population}</h2>
