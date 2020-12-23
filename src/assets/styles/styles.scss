@@ -22,6 +22,11 @@ body {
   right: 0;
   z-index: 10000;
 
+  a {
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.8rem;
+  }
+
   .nav {
     height: 50px;
     width: 95%;

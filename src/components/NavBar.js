@@ -1,9 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaHome, FaSearch } from 'react-icons/fa';
 
 const NavBar = () => (
   <div className="header">
-    <h3>UsCities</h3>
+    <h3>
+      <Link to="/">UsCities</Link>
+    </h3>
     <div className="nav">
       <div>
         <NavLink to="/">
