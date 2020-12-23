@@ -30,6 +30,11 @@ body {
     place-items: center;
     justify-content: space-between;
 
+    .home-icon {
+      color: rgb(206, 206, 206);
+      font-size: 2rem;
+    }
+
     form {
       display: flex;
       flex-direction: row;
