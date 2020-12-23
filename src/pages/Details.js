@@ -22,7 +22,7 @@ const Details = ({ cities, match: { params } }) => {
           <span>City: </span>
           <span className="city-span">{city}</span>
         </p>
-        <p>
+        <p className="state-p">
           <span>State: </span>
           <span>{state}</span>
         </p>
