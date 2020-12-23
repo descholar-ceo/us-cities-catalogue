@@ -4,13 +4,16 @@ import PropTypes from 'prop-types';
 import { FaHome, FaSearch } from 'react-icons/fa';
 import { connect } from 'react-redux';
 import { filterCity } from '../redux/actions';
-import { handleSearchQuerySubmit } from '../helpers/filterHelper';
 
 const NavBar = ({ getSearchQuery }) => {
   const [state, setState] = useState({ searchQuery: '' });
   const handleSearchQueryChange = event => {
     event.preventDefault();
     setState({ searchQuery: event.target.value });
+    getSearchQuery(state.searchQuery);
+  };
+  const handleSearchQuerySubmit = event => {
+    event.preventDefault();
     getSearchQuery(state.searchQuery);
   };
   return (
@@ -25,7 +28,7 @@ const NavBar = ({ getSearchQuery }) => {
           </NavLink>
         </div>
         <div>
-          <form onSubmit={() => handleSearchQuerySubmit(state, getSearchQuery)}>
+          <form onSubmit={event => handleSearchQuerySubmit(event)}>
             <input
               type="text"
               onChange={event => handleSearchQueryChange(event)}

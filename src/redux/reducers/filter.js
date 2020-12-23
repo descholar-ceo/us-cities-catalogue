@@ -5,7 +5,7 @@ const initialState = 'All';
 const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case FILTER_CITY:
-      return action.filter;
+      return action.mFilter;
     default:
       return state;
   }
