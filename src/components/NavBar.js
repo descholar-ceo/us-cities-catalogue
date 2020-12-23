@@ -3,6 +3,7 @@ import { FaHome, FaSearch } from 'react-icons/fa';
 
 const NavBar = () => (
   <div className="header">
+    <h3>UsCities</h3>
     <div className="nav">
       <div>
         <NavLink to="/">
