@@ -5,8 +5,9 @@ const NavBar = () => (
   <div className="header">
     <div className="nav">
       <div>
-        <FaHome />
-        <NavLink to="/">UsCities</NavLink>
+        <NavLink to="/">
+          <FaHome />
+        </NavLink>
       </div>
       <div>
         <form>
