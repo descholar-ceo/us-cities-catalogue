@@ -30,7 +30,7 @@ const Details = ({ cities, match: { params } }) => {
           <span>Rank: </span>
           <span>{rank}</span>
         </p>
-        <p>
+        <p className="population-p">
           <span>Population: </span>
           <span>{population}</span>
         </p>
