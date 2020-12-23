@@ -18,9 +18,9 @@ const Details = ({ cities, match: { params } }) => {
     <div className="city-details-conatiner">
       <img src={sampleBg} alt="washington" />
       <div>
-        <p>
+        <p className="city-p">
           <span>City: </span>
-          <span>{city}</span>
+          <span className="city-span">{city}</span>
         </p>
         <p>
           <span>State: </span>

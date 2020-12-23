@@ -83,6 +83,16 @@ body {
       font-size: 0.9rem;
       color: rgb(117, 238, 17);
     }
+
+    .city-p {
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: rgb(164, 208, 250);
+
+      .city-span {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
