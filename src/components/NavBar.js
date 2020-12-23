@@ -10,7 +10,7 @@ const NavBar = () => (
       </div>
       <div>
         <form>
-          <input type="text" name="searchQuery" />
+          <input type="text" name="searchQuery" placeholder="City or State" />
           <button type="submit">
             <FaSearch />
           </button>

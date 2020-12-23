@@ -29,6 +29,33 @@ body {
     flex-direction: row;
     place-items: center;
     justify-content: space-between;
+
+    form {
+      display: flex;
+      flex-direction: row;
+      place-items: center;
+      border: 1px solid rgb(206, 206, 206);
+      background-color: rgb(206, 206, 206);
+      border-radius: 0.4rem;
+      height: 2rem;
+      padding: 0.2rem;
+
+      input {
+        border-radius: inherit;
+        border: none;
+        outline: none;
+        height: 100%;
+        background-color: rgb(206, 206, 206);
+      }
+
+      button {
+        background-color: rgb(206, 206, 206);
+        border: none;
+        outline: none;
+        padding: 0.1rem;
+        border-radius: inherit;
+      }
+    }
   }
 }
 
@@ -73,17 +100,20 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 100px;
+  bottom: 0;
   left: 0;
+  right: 0;
 
   img {
     width: 100%;
     height: 50%;
+    position: fixed;
+    bottom: 0;
   }
 
   div {
     position: relative;
-    top: -80px;
+    top: 40%;
     background-color: rgba(0, 0, 0, 0.8);
     color: rgb(255, 255, 255);
     width: 90%;
