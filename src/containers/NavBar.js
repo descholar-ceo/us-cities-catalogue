@@ -12,9 +12,9 @@ const NavBar = ({ renderedComponent }) => {
   ) : '';
   return (
     <div className="header">
-      <h3>
+      <h1>
         <Link to="/">UsCities</Link>
-      </h3>
+      </h1>
       {isFormRendered}
     </div>
   );
