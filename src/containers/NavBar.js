@@ -1,16 +1,10 @@
-import { Link, NavLink } from 'react-router-dom';
-import { FaHome } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import SearchForm from '../components/SeacrcForm';
 
 const NavBar = ({ renderedComponent }) => {
   const isFormRendered = renderedComponent === 'all-cities' ? (
     <div className="nav">
-      <div>
-        <NavLink to="/">
-          <FaHome className="home-icon" />
-        </NavLink>
-      </div>
       <div>
         <SearchForm />
       </div>
