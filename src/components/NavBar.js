@@ -2,8 +2,8 @@ import { NavLink } from 'react-router-dom';
 import { FaHome, FaSearch } from 'react-icons/fa';
 
 const NavBar = () => (
-  <header>
-    <nav>
+  <div className="header">
+    <div className="nav">
       <div>
         <FaHome />
         <NavLink to="/">UsCities</NavLink>
@@ -16,8 +16,8 @@ const NavBar = () => (
           </button>
         </form>
       </div>
-    </nav>
-  </header>
+    </div>
+  </div>
 );
 
 export default NavBar;
