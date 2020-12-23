@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+import { Fragment } from 'react';
 import { connect } from 'react-redux';
 import sampleBg from '../assets/images/washinton-dc-pic.jpg';
+import NavBar from '../containers/NavBar';
 
 const Details = ({ cities, match: { params } }) => {
   const { city: selectedCity } = params;
@@ -15,35 +17,38 @@ const Details = ({ cities, match: { params } }) => {
     state,
   } = myCity[0];
   return (
-    <div className="city-details-conatiner">
-      <img src={sampleBg} alt="washington" />
-      <div>
-        <p className="city-p">
-          <span>City: </span>
-          <span className="city-span">{city}</span>
-        </p>
-        <p className="state-p">
-          <span>State: </span>
-          <span>{state}</span>
-        </p>
-        <p>
-          <span>Rank: </span>
-          <span>{rank}</span>
-        </p>
-        <p className="population-p">
-          <span>Population: </span>
-          <span>{population}</span>
-        </p>
-        <p className="growth-p">
-          <span>Growth between 2000 and 2013: </span>
-          <span>{growthFrom2000To2013}</span>
-        </p>
-        <p className="location-p">
-          <span>Location: </span>
-          <span>{`(${latitude}, ${longitude})`}</span>
-        </p>
+    <>
+      <NavBar renderedComponent="details" />
+      <div className="city-details-conatiner">
+        <img src={sampleBg} alt="washington" />
+        <div>
+          <p className="city-p">
+            <span>City: </span>
+            <span className="city-span">{city}</span>
+          </p>
+          <p className="state-p">
+            <span>State: </span>
+            <span>{state}</span>
+          </p>
+          <p>
+            <span>Rank: </span>
+            <span>{rank}</span>
+          </p>
+          <p className="population-p">
+            <span>Population: </span>
+            <span>{population}</span>
+          </p>
+          <p className="growth-p">
+            <span>Growth between 2000 and 2013: </span>
+            <span>{growthFrom2000To2013}</span>
+          </p>
+          <p className="location-p">
+            <span>Location: </span>
+            <span>{`(${latitude}, ${longitude})`}</span>
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

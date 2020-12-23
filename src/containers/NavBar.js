@@ -1,21 +1,14 @@
 import { Link, NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { FaHome } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import { FaHome, FaSearch } from 'react-icons/fa';
-import { connect } from 'react-redux';
-import { filterCity } from '../redux/actions';
+import SearchForm from '../components/SeacrcForm';
 
-const NavBar = ({ getSearchQuery }) => {
-  const [state, setState] = useState({ searchQuery: '' });
-  const handleSearchQueryChange = event => {
-    event.preventDefault();
-    setState({ searchQuery: event.target.value });
-    getSearchQuery(state.searchQuery);
-  };
-  const handleSearchQuerySubmit = event => {
-    event.preventDefault();
-    getSearchQuery(state.searchQuery);
-  };
+const NavBar = ({ renderedComponent }) => {
+  const isFormRendered = renderedComponent === 'all-cities' ? (
+    <div>
+      <SearchForm />
+    </div>
+  ) : '';
   return (
     <div className="header">
       <h3>
@@ -27,30 +20,14 @@ const NavBar = ({ getSearchQuery }) => {
             <FaHome className="home-icon" />
           </NavLink>
         </div>
-        <div>
-          <form onSubmit={event => handleSearchQuerySubmit(event)}>
-            <input
-              type="text"
-              onChange={event => handleSearchQueryChange(event)}
-              value={state.searchQuery}
-              placeholder="City or State"
-            />
-            <button type="submit">
-              <FaSearch />
-            </button>
-          </form>
-        </div>
+        {isFormRendered}
       </div>
     </div>
   );
 };
 
 NavBar.propTypes = {
-  getSearchQuery: PropTypes.func.isRequired,
+  renderedComponent: PropTypes.string.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({
-  getSearchQuery: searchQuery => dispatch(filterCity(searchQuery)),
-});
-
-export default connect(null, mapDispatchToProps)(NavBar);
+export default NavBar;
