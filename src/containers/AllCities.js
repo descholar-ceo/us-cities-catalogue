@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import City from '../components/City';
-import { getCitiesAction } from '../redux/actions';
 import Loading from '../components/Loading';
 
 const AllCities = ({ cities, filter }) => {
@@ -30,10 +29,8 @@ const AllCities = ({ cities, filter }) => {
 AllCities.propTypes = {
   cities: PropTypes.arrayOf(PropTypes.object).isRequired,
   filter: PropTypes.string.isRequired,
-  // getCitiesAction: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({ cities: state.cityReducer.cities, filter: state.filter });
-// const mapDispatchToProps = dispatch => ({ getCities: () => dispatch(getCitiesAction()) });
 
-export default connect(mapStateToProps, { getCitiesAction })(AllCities);
+export default connect(mapStateToProps, null)(AllCities);
