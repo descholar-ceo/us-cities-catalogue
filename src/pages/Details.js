@@ -5,19 +5,21 @@ import NavBar from '../containers/NavBar';
 
 const Details = ({ cities, match: { params } }) => {
   const { city: selectedCity } = params;
-  const myCity = cities.filter(city => city.city === selectedCity);
-  const {
-    city,
-    population,
-    growth_from_2000_to_2013: growthFrom2000To2013,
-    latitude,
-    longitude,
-    rank,
-    state,
-  } = myCity[0];
-  return (
-    <>
-      <NavBar renderedComponent="details" />
+  let componentToRender;
+  if (Object.keys(cities).length === 0) {
+    componentToRender = (<h1>Loading...</h1>);
+  } else {
+    const myCity = cities.filter(city => city.city === selectedCity);
+    const {
+      city,
+      population,
+      growth_from_2000_to_2013: growthFrom2000To2013,
+      latitude,
+      longitude,
+      rank,
+      state,
+    } = myCity[0];
+    componentToRender = (
       <div className="city-details-conatiner">
         <img src={sampleBg} alt="washington" />
         <div>
@@ -47,6 +49,13 @@ const Details = ({ cities, match: { params } }) => {
           </p>
         </div>
       </div>
+    );
+  }
+
+  return (
+    <>
+      <NavBar renderedComponent="details" />
+      {componentToRender}
     </>
   );
 };
