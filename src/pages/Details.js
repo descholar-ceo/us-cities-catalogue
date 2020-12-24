@@ -52,7 +52,7 @@ const Details = ({ cities, match: { params } }) => {
             <span>{growthFrom2000To2013}</span>
           </p>
           <p className="location-p">
-            <span>Location: </span>
+            <span>Coordinates: </span>
             <span>{`(${latitude}, ${longitude})`}</span>
           </p>
         </div>
