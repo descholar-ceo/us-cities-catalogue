@@ -6,7 +6,7 @@ const getCityData = async city => {
   const cityToSend = city.replace(/\s+/g, '-').toLowerCase();
   try {
     const cityData = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${cityToSend}/images`);
-    res = cityData.data;
+    res = cityData.data.photos[0].image.mobile;
     console.log({ res });
   } catch (err) {
     res = fallbackImg;
