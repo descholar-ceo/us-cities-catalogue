@@ -29,7 +29,7 @@ const Details = ({ cities, match: { params } }) => {
     } = myCity[0];
     componentToRender = (
       <div className="city-details-conatiner">
-        <img src={state.cityImg} alt="washington" />
+        <img src={state.cityImg} alt={city} />
         <div>
           <p className="city-p">
             <span>City: </span>

@@ -12,7 +12,7 @@ const City = ({ city }) => {
   }, []);
   return (
     <div className="list-one-city">
-      <img src={state.cityImg} alt="washington" />
+      <img src={state.cityImg} alt={mCity} />
       <Link to={`/details/${mCity}`}>
         <h1>{mCity}</h1>
         <h2>
