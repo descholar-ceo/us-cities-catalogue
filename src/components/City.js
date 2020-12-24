@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import getCityImage from '../helpers/cityHelper';
-// import sampleBg from '../assets/images/washinton-dc-pic.jpg';
 
 const City = ({ city }) => {
   const { city: mCity, state: mState } = city;
@@ -10,7 +9,6 @@ const City = ({ city }) => {
   useEffect(async () => {
     const cityImage = await getCityImage(mCity);
     setState({ cityImg: cityImage });
-    // console.log({ state.cityImg });
   }, []);
   return (
     <div className="list-one-city">
