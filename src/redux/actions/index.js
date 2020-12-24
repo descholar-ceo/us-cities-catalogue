@@ -16,7 +16,7 @@ export const getCityImage = (city, fallbackImg) => async dispatch => {
   } catch (err) {
     res = fallbackImg;
   }
-  dispatch({ city, bgImg: res });
+  dispatch({ cityImage: { city, bgImg: res } });
 };
 
 export const filterCity = mFilter => ({
