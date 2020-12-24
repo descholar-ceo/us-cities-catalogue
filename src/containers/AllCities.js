@@ -15,7 +15,7 @@ const AllCities = ({ cities, filter }) => {
       const regex = new RegExp(`^${filter}`, 'gi');
       return cities.filter(currCity => currCity.city.match(regex) || currCity.state.match(regex));
     };
-    const cityRows = cityToDisplay().map((currCity, index) => <City key={`city-num${index + 1}`} city={currCity} />);
+    const cityRows = cityToDisplay().map((currCity, index) => (<City key={`city-num${index + 1}`} city={currCity} />));
     comp = cityRows;
   }
 

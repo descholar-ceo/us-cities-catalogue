@@ -1,6 +1,8 @@
 import { GET_ALL_CITIES } from '../actions/actionsTypes';
 
-const initialState = {};
+const initialState = {
+  cities: [],
+};
 
 const cityReducer = (state = initialState, action) => {
   switch (action.type) {

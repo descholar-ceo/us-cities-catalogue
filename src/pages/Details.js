@@ -56,6 +56,6 @@ Details.propTypes = {
   match: PropTypes.arrayOf().isRequired,
 };
 
-const mapStateToProps = state => ({ cities: state.cities });
+const mapStateToProps = state => ({ cities: state.cityReducer.cities });
 
 export default connect(mapStateToProps, null)(Details);
