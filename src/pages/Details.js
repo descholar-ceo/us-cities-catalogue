@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import sampleBg from '../assets/images/washinton-dc-pic.jpg';
+import Loading from '../components/Loading';
 import NavBar from '../containers/NavBar';
 
 const Details = ({ cities, match: { params } }) => {
   const { city: selectedCity } = params;
   let componentToRender;
   if (Object.keys(cities).length === 0) {
-    componentToRender = (<h1>Loading...</h1>);
+    componentToRender = (<Loading />);
   } else {
     const myCity = cities.filter(city => city.city === selectedCity);
     const {
