@@ -1,7 +1,7 @@
 import axios from 'axios';
 import fallbackImg from '../assets/images/washinton-dc-pic.jpg';
 
-const getCityData = async city => {
+const getCityImage = async city => {
   let res;
   const cityToSend = city.replace(/\s+/g, '-').toLowerCase();
   try {
@@ -13,4 +13,4 @@ const getCityData = async city => {
   return res;
 };
 
-export default getCityData;
+export default getCityImage;

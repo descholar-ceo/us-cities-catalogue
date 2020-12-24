@@ -7,7 +7,7 @@ export const getCitiesAction = () => async dispatch => {
   dispatch({ cities: sampleCities.data, type: GET_ALL_CITIES });
 };
 
-export const getCityImage = (city, fallbackImg) => async dispatch => {
+export const getCityImageAction = (city, fallbackImg) => async dispatch => {
   let res;
   const cityToSend = city.replace(/\s+/g, '-').toLowerCase();
   try {
