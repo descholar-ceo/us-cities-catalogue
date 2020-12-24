@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import City from '../components/City';
 import { getCitiesAction } from '../redux/actions';
+import Loading from '../components/Loading';
 
 const AllCities = ({ cities, filter }) => {
-  let comp;
+  let componentToRender;
   if (Object.keys(cities).length === 0) {
-    comp = (<h1>Loading...</h1>);
+    componentToRender = (<Loading />);
   } else {
     const cityToDisplay = () => {
       if (filter === 'All') {
@@ -16,12 +17,12 @@ const AllCities = ({ cities, filter }) => {
       return cities.filter(currCity => currCity.city.match(regex) || currCity.state.match(regex));
     };
     const cityRows = cityToDisplay().map((currCity, index) => (<City key={`city-num${index + 1}`} city={currCity} />));
-    comp = cityRows;
+    componentToRender = cityRows;
   }
 
   return (
     <div className="global-container">
-      {comp}
+      {componentToRender}
     </div>
   );
 };
