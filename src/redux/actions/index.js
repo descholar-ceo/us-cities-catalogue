@@ -7,18 +7,6 @@ export const getCitiesAction = () => async dispatch => {
   dispatch({ cities: sampleCities.data, type: GET_ALL_CITIES });
 };
 
-export const getCityImageAction = (city, fallbackImg) => async dispatch => {
-  let res;
-  const cityToSend = city.replace(/\s+/g, '-').toLowerCase();
-  try {
-    const cityData = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${cityToSend}/images`);
-    res = cityData.data.photos[0].image.mobile;
-  } catch (err) {
-    res = fallbackImg;
-  }
-  dispatch({ cityImage: { city, bgImg: res } });
-};
-
 export const filterCity = mFilter => ({
   mFilter,
   type: FILTER_CITY,
