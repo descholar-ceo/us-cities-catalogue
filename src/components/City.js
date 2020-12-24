@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import getCityImage from '../helpers/cityHelper';
+import Loading from './Loading';
 
 const City = ({ city }) => {
   const { city: mCity, state: mState } = city;
@@ -12,7 +13,7 @@ const City = ({ city }) => {
   }, []);
   return (
     <div className="list-one-city">
-      <img src={state.cityImg} alt={mCity} />
+      {state.cityImg === '' ? <Loading /> : <img src={state.cityImg} alt={mCity} />}
       <Link to={`/details/${mCity}`}>
         <h1>{mCity}</h1>
         <h2>
