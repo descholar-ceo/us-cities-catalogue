@@ -63,7 +63,7 @@ const Details = ({ cities, match: { params } }) => {
 
 Details.propTypes = {
   cities: PropTypes.arrayOf(PropTypes.object).isRequired,
-  match: PropTypes.arrayOf().isRequired,
+  match: PropTypes.shape().isRequired,
 };
 
 const mapStateToProps = state => ({ cities: state.cityReducer.cities });
