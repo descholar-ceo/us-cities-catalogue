@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import sampleBg from '../assets/images/washinton-dc-pic.jpg';
 
 const City = ({ city }) => {
-  const { city: mCity, population } = city;
+  const { city: mCity, state } = city;
   return (
     <div className="list-one-city">
       <img src={sampleBg} alt="washington" />
       <Link to={`/details/${mCity}`}>
         <h1>{mCity}</h1>
         <h2>
-          Population:
+          State:
           {' '}
-          {population}
+          {state}
         </h2>
       </Link>
     </div>
