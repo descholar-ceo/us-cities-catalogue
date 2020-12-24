@@ -1,11 +1,18 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import sampleBg from '../assets/images/washinton-dc-pic.jpg';
+import { useEffect, useState } from 'react';
+// import sampleBg from '../assets/images/washinton-dc-pic.jpg';
 import Loading from '../components/Loading';
 import NavBar from '../containers/NavBar';
+import getCityImage from '../helpers/cityHelper';
 
 const Details = ({ cities, match: { params } }) => {
   const { city: selectedCity } = params;
+  const [state, setState] = useState({ cityImg: '' });
+  useEffect(async () => {
+    const cityImage = await getCityImage(selectedCity);
+    setState({ cityImg: cityImage });
+  }, []);
   let componentToRender;
   if (Object.keys(cities).length === 0) {
     componentToRender = (<Loading />);
@@ -18,11 +25,11 @@ const Details = ({ cities, match: { params } }) => {
       latitude,
       longitude,
       rank,
-      state,
+      state: mState,
     } = myCity[0];
     componentToRender = (
       <div className="city-details-conatiner">
-        <img src={sampleBg} alt="washington" />
+        <img src={state.cityImg} alt="washington" />
         <div>
           <p className="city-p">
             <span>City: </span>
@@ -30,7 +37,7 @@ const Details = ({ cities, match: { params } }) => {
           </p>
           <p className="state-p">
             <span>State: </span>
-            <span>{state}</span>
+            <span>{mState}</span>
           </p>
           <p>
             <span>Rank: </span>
