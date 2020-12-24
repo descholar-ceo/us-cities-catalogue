@@ -1,11 +1,25 @@
 import axios from 'axios';
+import fallbackImg from '../assets/images/washinton-dc-pic.jpg';
 
-const getSampleCities = async () => {
-  const sampleCities = await axios.get('https://gist.githubusercontent.com/descholar-ceo/9b11200f0a83417cbdbd2057afbdf855/raw/780763225ed334d85277db5342e0375ce641b75f/sample-us-cities.json')
-    .then(res => res.data)
-    .catch(err => err.response.data);
+const getCityData = async city => {
+  let res;
+  const cityToSend = city.replace(/\s+/g, '-').toLowerCase();
+  try {
+    const cityData = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${cityToSend}/images`);
+    res = cityData.data;
+    console.log({ res });
+  } catch (err) {
+    res = fallbackImg;
+    console.log(err.response.data);
+  }
+  return res;
 
-  return sampleCities;
+  // const cityData = fetch(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${city}&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyCmKsMOokFjKKOQ5iBPIscE0-u234aNxMs`, { mode: 'no-cors' })
+  //   .then(response => (response.json())).then(res => {
+  //     console.log(res);
+  //     return res;
+  //   });
+  // return cityData;
 };
 
-export default getSampleCities;
+export default getCityData;

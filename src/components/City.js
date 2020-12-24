@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import getCityData from '../helpers/cityHelper';
 import sampleBg from '../assets/images/washinton-dc-pic.jpg';
 
 const City = ({ city }) => {
   const { city: mCity, state } = city;
+  useEffect(() => getCityData(mCity), []);
   return (
     <div className="list-one-city">
       <img src={sampleBg} alt="washington" />
