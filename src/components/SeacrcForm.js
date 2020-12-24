@@ -9,7 +9,7 @@ const SearchForm = ({ getSearchQuery }) => {
   const handleSearchQueryChange = event => {
     event.preventDefault();
     setState({ searchQuery: event.target.value });
-    getSearchQuery(state.searchQuery);
+    getSearchQuery(event.target.value);
   };
   const handleSearchQuerySubmit = event => {
     event.preventDefault();
