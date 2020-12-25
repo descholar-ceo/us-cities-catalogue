@@ -23,11 +23,11 @@ describe('Test getCitiesAction action', () => {
   it('The getCities action dispatches cities after fetching them from the API', () => {
     fetchMock.getOnce(API_FOR_TEST, {
       body: {
-        cities: CITIES_FOR_TEST,
+        cities: [CITIES_FOR_TEST],
       },
       headers: { 'content-type': 'application/json' },
     });
-    const expectedAction = [GET_ALL_CITIES];
+    const expectedAction = [{ cities: CITIES_FOR_TEST, type: GET_ALL_CITIES }];
     const store = mockStore({ cities: [] });
     return store.dispatch(getCitiesAction()).then(() => {
       expect(store.getActions()).toEqual(expectedAction);
