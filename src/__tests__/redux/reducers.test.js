@@ -6,4 +6,8 @@ describe('Test of filterReducer', () => {
     expect(res).toEqual('All');
     done();
   });
+
+  it('filterReducer handles FILTER_CITY action', done => {
+    done();
+  });
 });
