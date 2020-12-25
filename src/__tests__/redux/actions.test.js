@@ -1,8 +1,9 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
-import { filterCity } from '../../redux/actions';
-import { FILTER_CITY } from '../../redux/actions/actionsTypes';
+import { filterCity, getCitiesAction } from '../../redux/actions';
+import { FILTER_CITY, GET_ALL_CITIES } from '../../redux/actions/actionsTypes';
+import { BASE_API } from '../../assets/samples/apis';
 
 describe('Test filterCity action', () => {
   it('The filter action returns the filterString and actiontype', done => {
@@ -17,9 +18,16 @@ describe('Test filterCity action', () => {
 
 describe('Test getCitiesAction action', () => {
   const middleware = [thunk];
-  const mockStore = configureMockStore(thunk);
-  it('The getCities action dispatches cities after fetching them from the API', done => {
-    fetchMock.getOnce();
-    done();
+  const mockStore = configureMockStore(middleware);
+  it('The getCities action dispatches cities after fetching them from the API', () => {
+    fetchMock.getOnce(BASE_API, {
+      body: { cities: ['do something'] },
+      headers: { 'content-type': 'application/json' },
+    });
+    const expectedAction = [GET_ALL_CITIES];
+    const store = mockStore({ cities: [] });
+    return store.dispatch(getCitiesAction()).then(() => {
+      expect(store.getActions()).toEqual(expectedAction);
+    });
   });
 });
