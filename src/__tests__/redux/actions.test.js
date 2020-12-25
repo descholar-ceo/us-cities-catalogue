@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 import { filterCity, getCitiesAction } from '../../redux/actions';
 import { FILTER_CITY, GET_ALL_CITIES } from '../../redux/actions/actionsTypes';
-import CITIES_FOR_TEST from '../../assets/samples/cities-sample';
+import { CITIES_FOR_TEST } from '../../assets/samples/cities-sample';
 import { BASE_API } from '../../assets/samples/apis';
 
 describe('Test filterCity action', () => {

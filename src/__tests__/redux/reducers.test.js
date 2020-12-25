@@ -1,4 +1,5 @@
-import { filterCity } from '../../redux/actions';
+import { ONE_SAMPLE_CITY } from '../../assets/samples/cities-sample';
+import { filterCity, getCitiesAction } from '../../redux/actions';
 import cityReducer from '../../redux/reducers/city';
 import filterReducer from '../../redux/reducers/filter';
 
@@ -21,7 +22,9 @@ describe('Test of filterReducer', () => {
 describe('Test of cityReducer', () => {
   it('cityReducer returns initialState when action return undefined', done => {
     const res = cityReducer(undefined, {});
+    const res2 = cityReducer({ cities: ONE_SAMPLE_CITY }, getCitiesAction);
     expect(res).toEqual({ cities: [] });
+    expect(res2).toEqual({ cities: ONE_SAMPLE_CITY });
     done();
   });
 });
