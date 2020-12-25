@@ -1,7 +1,7 @@
 import { filterCity } from '../../redux/actions';
 import { FILTER_CITY } from '../../redux/actions/actionsTypes';
 
-describe('Test actions', () => {
+describe('Test filterCity actions', () => {
   it('The filter action returns the filterString and actiontype', done => {
     const res = filterCity('Chicago');
     expect(res).toHaveProperty('type');
