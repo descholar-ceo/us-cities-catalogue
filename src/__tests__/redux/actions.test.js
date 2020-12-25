@@ -15,6 +15,12 @@ describe('Test filterCity action', () => {
     expect(res.mFilter).toEqual('Chicago');
     done();
   });
+
+  it('The filter action returns an undefined value when it is not passed a parameter', done => {
+    const res = filterCity();
+    expect(res.mFilter).toBe(undefined);
+    done();
+  });
 });
 
 describe('Test getCitiesAction action', () => {
