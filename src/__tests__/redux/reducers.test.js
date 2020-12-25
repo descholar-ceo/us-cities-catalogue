@@ -1,4 +1,5 @@
 import { filterCity } from '../../redux/actions';
+import cityReducer from '../../redux/reducers/city';
 import filterReducer from '../../redux/reducers/filter';
 
 describe('Test of filterReducer', () => {
@@ -17,4 +18,10 @@ describe('Test of filterReducer', () => {
   });
 });
 
-describe('Test of cityReducer', () => {});
+describe('Test of cityReducer', () => {
+  it('cityReducer returns initialState when action return undefined', done => {
+    const res = cityReducer(undefined, {});
+    expect(res).toEqual({ cities: [] });
+    done();
+  });
+});
