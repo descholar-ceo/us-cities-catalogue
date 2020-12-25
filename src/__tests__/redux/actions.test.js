@@ -3,7 +3,8 @@ import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 import { filterCity, getCitiesAction } from '../../redux/actions';
 import { FILTER_CITY, GET_ALL_CITIES } from '../../redux/actions/actionsTypes';
-import { BASE_API } from '../../assets/samples/apis';
+import { API_FOR_TEST } from '../../assets/samples/apis';
+import CITIES_FOR_TEST from '../../assets/samples/cities-sample';
 
 describe('Test filterCity action', () => {
   it('The filter action returns the filterString and actiontype', done => {
@@ -20,8 +21,10 @@ describe('Test getCitiesAction action', () => {
   const middleware = [thunk];
   const mockStore = configureMockStore(middleware);
   it('The getCities action dispatches cities after fetching them from the API', () => {
-    fetchMock.getOnce(BASE_API, {
-      body: { cities: ['do something'] },
+    fetchMock.getOnce(API_FOR_TEST, {
+      body: {
+        cities: CITIES_FOR_TEST,
+      },
       headers: { 'content-type': 'application/json' },
     });
     const expectedAction = [GET_ALL_CITIES];
