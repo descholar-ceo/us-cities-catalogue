@@ -1,3 +1,6 @@
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import fetchMock from '';
 import { filterCity } from '../../redux/actions';
 import { FILTER_CITY } from '../../redux/actions/actionsTypes';
 
@@ -14,6 +17,7 @@ describe('Test filterCity action', () => {
 
 describe('Test getCitiesAction action', () => {
   it('The getCities action dispatches cities after fetching them from the API', done => {
+
     done();
   });
 });
