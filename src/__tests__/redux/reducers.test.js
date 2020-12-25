@@ -16,3 +16,5 @@ describe('Test of filterReducer', () => {
     done();
   });
 });
+
+describe('Test of cityReducer', () => {});
