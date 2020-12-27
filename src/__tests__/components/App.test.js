@@ -1,10 +1,11 @@
 import { shallow } from 'enzyme';
-import app from '../../components/App';
+import { App } from '../../components/App';
+import Routes from '../../components/Routes';
 
 describe('Test App component', () => {
   it('Renders the App component', done => {
-    const AppComp = shallow(<app />);
-    expect(AppComp.containsMatchingElement(<app />)).toBeTruthy();
+    const AppComp = shallow(<App getCitiesAction={jest.fn()} />);
+    expect(AppComp.containsMatchingElement(<Routes />)).toBeTruthy();
     done();
   });
 });
