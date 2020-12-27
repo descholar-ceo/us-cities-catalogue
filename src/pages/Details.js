@@ -33,7 +33,7 @@ const Details = ({ cities, match: { params } }) => {
         {state.cityImg === '' ? <Loading /> : <img src={state.cityImg} alt={city} />}
         <div className="city-link-to-wikipedia">
           <p>
-            Read
+            Read more about
             {' '}
             <em><strong>{city}</strong></em>
             {' '}
