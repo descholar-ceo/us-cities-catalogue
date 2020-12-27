@@ -12,4 +12,10 @@ describe('Test for wikipediaUrlGenerator', () => {
     expect(generatedUrl).toEqual('https://en.wikipedia.org/wiki/san_francisco');
     done();
   });
+
+  it('Returns nothing when nothimg passed in arguments', done => {
+    const generatedUrl = WikipediaUrlGenerator('');
+    expect(generatedUrl).toEqual('https://en.wikipedia.org/wiki/');
+    done();
+  });
 });
