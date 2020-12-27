@@ -97,7 +97,6 @@ a {
   cursor: pointer;
 }
 
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -137,4 +136,16 @@ q::after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
