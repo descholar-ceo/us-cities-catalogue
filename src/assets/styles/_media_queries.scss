@@ -16,4 +16,17 @@
     width: 70%;
     margin: 0 auto;
   }
+
+  .city-details-conatiner {
+    position: absolute;
+    bottom: 5rem;
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin: 0 auto 3rem auto;
+
+    img {
+      width: 70%;
+    }
+  }
 }
