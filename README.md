@@ -2,7 +2,11 @@
 ![Tests with node](https://github.com/descholar-ceo/us-cities-catalogue/workflows/Tests%20with%20node/badge.svg)  ![Linters](https://github.com/descholar-ceo/us-cities-catalogue/workflows/Linters/badge.svg)
 > A simple catalogue of US Cities with React/Redux
 
-![us-cities-catalogue screenshot](./src/assets/images/us-cities-screenshot.png)
+
+
+| Mobile view | Tablets view | Desktop view |
+| --- | --- | --- |
+| ![us-cities-catalogue screenshot](./src/assets/images/us-cities-screenshot.png) | ![us-cities-catalogue screenshot](./src/assets/images/us-cities-catalogue-tablets.png) | ![us-cities-catalogue screenshot](./src/assets/images/us-cities-catalogue-desktops.png) |
 
 I developed this project as the capstone project after completing Microverse's React/Redux course. It deals with a simple catalogue of the [United States](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States) using redux state management. With it: you can get a list of 1000 first United States cities that have a population over 10,0000, city's growth between 2000 and 2013, city's coordinate, and get the link to the city's details which redirects you to Wikipedia. I used SASS to style it.
 
