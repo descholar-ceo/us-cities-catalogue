@@ -10,3 +10,10 @@
     row-gap: 0.5rem;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .root {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
