@@ -1,10 +1,9 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable import/no-named-as-default */
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
 import { FaSearch } from 'react-icons/fa';
-import SearchForm, { SearchForm as UnconnectedSearchForm } from '../../components/SearchForm';
+import searchForm, { SearchForm } from '../../components/SearchForm';
 
 const initialState = {};
 const mockStore = configureStore();
@@ -15,7 +14,7 @@ let store;
 describe('Test SearchForm component snapshot', () => {
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapper = renderer.create(<SearchForm store={store} />).toJSON();
+    wrapper = renderer.create(<searchForm store={store} />).toJSON();
   });
   it('Renders the SearchForm component', done => {
     expect(wrapper).toMatchSnapshot();
@@ -26,7 +25,7 @@ describe('Test SearchForm component snapshot', () => {
 describe('Test SearchForm component unconnected', () => {
   beforeEach(() => {
     const mockGetSearchQueryFn = jest.fn();
-    newWrapper = shallow(<UnconnectedSearchForm getSearchQuery={mockGetSearchQueryFn} />);
+    newWrapper = shallow(<SearchForm getSearchQuery={mockGetSearchQueryFn} />);
   });
   it('Renders the SearchForm component', done => {
     expect(newWrapper.containsMatchingElement(<button type="submit"><FaSearch /></button>)).toBeTruthy();
