@@ -1,6 +1,7 @@
 /* eslint-disable import/no-named-as-default */
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FaHome } from 'react-icons/fa';
 import SearchForm from '../components/SearchForm';
 
 const NavBar = ({ renderedComponent }) => {
@@ -14,7 +15,10 @@ const NavBar = ({ renderedComponent }) => {
   return (
     <div className="header">
       <h1>
-        <Link to="/">UsCities</Link>
+        <Link to="/">
+          <FaHome />
+          UsCities
+        </Link>
       </h1>
       {isFormRendered}
     </div>

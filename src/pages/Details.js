@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
-// import sampleBg from '../assets/images/washinton-dc-pic.jpg';
 import Loading from '../components/Loading';
 import NavBar from '../containers/NavBar';
 import getCityImage from '../helpers/cityHelper';
