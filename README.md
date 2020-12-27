@@ -1,6 +1,6 @@
 # UsCities Catalogue
 ![Tests with node](https://github.com/descholar-ceo/us-cities-catalogue/workflows/Tests%20with%20node/badge.svg)  ![Linters](https://github.com/descholar-ceo/us-cities-catalogue/workflows/Linters/badge.svg)
-> A simple bookstore management with React/Redux
+> A simple catalogue of US Cities with React/Redux
 
 ![us-cities-catalogue screenshot](./src/assets/images/us-cities-screenshot.png)
 
