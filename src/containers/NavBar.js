@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import SearchForm from '../components/SearchForm';
