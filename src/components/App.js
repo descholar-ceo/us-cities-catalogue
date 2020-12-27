@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Routes from './Routes';
 import { getCitiesAction } from '../redux/actions';
 
-const App = ({ getCitiesAction }) => {
+export const App = ({ getCitiesAction }) => {
   useEffect(() => getCitiesAction(), []);
   return (
     <BrowserRouter>
