@@ -30,7 +30,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --testTimeout=15000 --verbose",
     "eject": "react-scripts eject",
     "eslint-f": "npx eslint . --fix",
     "stylelint-f": "npx stylelint **/*.{css,scss} --fix"
