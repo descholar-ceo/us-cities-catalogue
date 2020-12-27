@@ -6,4 +6,10 @@ describe('Test for wikipediaUrlGenerator', () => {
     expect(generatedUrl).toEqual('https://en.wikipedia.org/wiki/chicago');
     done();
   });
+
+  it('Returns the url to wikipedia depending on the passed city, with formatted name when the passed city name is a compund name', done => {
+    const generatedUrl = WikipediaUrlGenerator('san francisco');
+    expect(generatedUrl).toEqual('https://en.wikipedia.org/wiki/san_francisco');
+    done();
+  });
 });
