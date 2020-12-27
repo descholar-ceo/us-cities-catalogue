@@ -8,13 +8,24 @@ const mockStore = configureStore();
 let wrapper;
 let store;
 
-describe('Test SearchForm component', () => {
+describe('Test SearchForm component snapshot', () => {
   beforeEach(() => {
     store = mockStore(initialState);
-    wrapper = renderer.create(<SearchForm store={store} />);
+    wrapper = renderer.create(<SearchForm store={store} />).toJSON();
   });
   it('Renders the SearchForm component', done => {
     expect(wrapper).toMatchSnapshot();
     done();
   });
 });
+
+// describe('Test SearchForm component', () => {
+//   beforeEach(() => {
+//     store = mockStore(initialState);
+//     wrapper = shallow(<SearchForm store={store} />);
+//   });
+//   it('Renders the SearchForm component', done => {
+//     expect(wrapper).toMatchSnapshot();
+//     done();
+//   });
+// });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test SearchForm component Renders the SearchForm component 1`] = `
+exports[`Test SearchForm component snapshot Renders the SearchForm component 1`] = `
 <form
   onSubmit={[Function]}
 >
