@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { FaSearch } from 'react-icons/fa';
 import { filterCity } from '../redux/actions';
 
-const SearchForm = ({ getSearchQuery }) => {
+export const SearchForm = ({ getSearchQuery }) => {
   const [state, setState] = useState({ searchQuery: '' });
   const handleSearchQueryChange = event => {
     event.preventDefault();
