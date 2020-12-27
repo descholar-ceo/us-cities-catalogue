@@ -31,7 +31,7 @@ const Details = ({ cities, match: { params } }) => {
     componentToRender = (
       <div className="city-details-conatiner">
         {state.cityImg === '' ? <Loading /> : <img src={state.cityImg} alt={city} />}
-        <div>
+        <div className="city-link-to-wikipedia">
           <p>
             Read
             {' '}
