@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import SearchForm from '../components/SeacrcForm';
+import SearchForm from '../components/SearchForm';
 
 const NavBar = ({ renderedComponent }) => {
   const isFormRendered = renderedComponent === 'all-cities' ? (
