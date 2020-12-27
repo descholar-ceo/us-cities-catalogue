@@ -8,13 +8,12 @@
 | --- | --- | --- |
 | ![us-cities-catalogue screenshot](./src/assets/images/us-cities-screenshot.png) | ![us-cities-catalogue screenshot](./src/assets/images/us-cities-catalogue-tablets.png) | ![us-cities-catalogue screenshot](./src/assets/images/us-cities-catalogue-desktops.png) |
 
-I developed this project as the capstone project after completing Microverse's React/Redux course. It deals with a simple catalogue of the [United States](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States) using redux state management. With it: you can get a list of 1000 first United States cities that have a population over 10,0000, city's growth between 2000 and 2013, city's coordinate, and get the link to the city's details which redirects you to Wikipedia. I used SASS to style it.
-
-_Note:_ As the project's requirements found on [this link](https://www.notion.so/microverse/Catalogue-of-Recipes-ea589778a95f47fa98034d99d4016d2b) show the design, the design focuses mainly on mobile view. So as a result this app is better viewed on screens below 768px.
+I developed this project as the capstone project after completing Microverse's React/Redux course. It deals with a simple catalogue of the [United States Cities](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States). With it: you can get a list of 1000 first United States cities that have a population over 10,0000, city's growth between 2000 and 2013, city's coordinate, and get the link to the city's details which redirects you to Wikipedia. I have listed down all technologies I used to develop it.
 ## Built With
 
-- React/Redux
-- SASS
+- React/Redux as the main technology
+- SASS for designing
+- Jest and Enzyme for testing
 
 ## Live Demo
 
