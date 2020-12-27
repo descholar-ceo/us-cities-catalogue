@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Loading from '../components/Loading';
 import NavBar from '../containers/NavBar';
 import getCityImage from '../helpers/cityHelper';
+import WikipediaUrlGenerator from '../helpers/wikipediaUrlGenerator';
 
 const Details = ({ cities, match: { params } }) => {
   const { city: selectedCity } = params;
@@ -30,6 +32,17 @@ const Details = ({ cities, match: { params } }) => {
       <div className="city-details-conatiner">
         {state.cityImg === '' ? <Loading /> : <img src={state.cityImg} alt={city} />}
         <div>
+          <p>
+            Read
+            {' '}
+            <em><stron>{city}</stron></em>
+            {' '}
+            on
+            {' '}
+            <a href={WikipediaUrlGenerator(city)}>Wikipedia</a>
+          </p>
+        </div>
+        <div>
           <p className="city-p">
             <span>City: </span>
             <span className="city-span">{city}</span>
@@ -54,6 +67,7 @@ const Details = ({ cities, match: { params } }) => {
             <span>Coordinates: </span>
             <span>{`(${latitude}, ${longitude})`}</span>
           </p>
+          <Link to="/">Go back to all cities</Link>
         </div>
       </div>
     );
