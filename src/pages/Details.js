@@ -35,7 +35,7 @@ const Details = ({ cities, match: { params } }) => {
           <p>
             Read
             {' '}
-            <em><stron>{city}</stron></em>
+            <em><strong>{city}</strong></em>
             {' '}
             on
             {' '}
