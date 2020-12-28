@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# UsCities Catalogue
+![Tests with node](https://github.com/descholar-ceo/us-cities-catalogue/workflows/Tests%20with%20node/badge.svg)  ![Linters](https://github.com/descholar-ceo/us-cities-catalogue/workflows/Linters/badge.svg)
+> A simple catalogue of US Cities with React/Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+| Mobile view | Tablets view | Desktop view |
+| --- | --- | --- |
+| ![us-cities-catalogue screenshot](./src/assets/images/us-cities-screenshot.png) | ![us-cities-catalogue screenshot](./src/assets/images/us-cities-catalogue-tablets.png) | ![us-cities-catalogue screenshot](./src/assets/images/us-cities-catalogue-desktops.png) |
 
-### `yarn start`
+I developed this project as the capstone project after completing Microverse's React/Redux course. It deals with a simple catalogue of the [United States Cities](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States). With it: you can get a list of 1000 first United States cities that have a population over 10,0000, city's growth between 2000 and 2013, city's coordinate, and get the link to the city's details which redirects you to Wikipedia. I have listed down all technologies I used to develop it.
+## Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React/Redux as the main technology
+- SASS for designing
+- Jest and Enzyme for testing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Live Demo
 
-### `yarn test`
+[Live Demo Link](https://descholar-us-cities-catalogue.netlify.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get a local copy up and running follow these simple example steps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- [Node.js](https://nodejs.org/en/) Installed on your local computer
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
+### Install
+1. Clone this Repository by running `git clone https://github.com/descholar-ceo/us-cities-catalogue` and `cd us-cities-catalogue`
+2. Run `yarn` or `npm install` :point_right: to install all needed dependencies
+### Usage
+Run `yarn start` or `npm start`, the development server will start and the browser windows should get opened automatically, otherwise go on your browser and type `localhost:3000`, there you go
+### Run tests
+Run `yarn test` to run tests
 ### Deployment
+This app is deployed to [netlify](https://descholar-us-cities-catalogue.netlify.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Authors
 
-### `yarn build` fails to minify
+👤 **Mugirase Emmanuel**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub: [@Mugirase Emmanuel](https://github.com/descholar-ceo)
+- Twitter: [@Mugirase Emmanuel](https://twitter.com/descholar3)
+- LinkedIn: [Mugirase Emmanuel](https://linkedin.com/in/mugirase-emmanuel)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/descholar-ceo/us-cities-catalogue/issues).
+
+## Show your support
+
+Give it a :star: if you like this project!
+
+## Acknowledgments
+
+- [Microverse](https://www.microverse.org/)
+- [Marc-Antoine Roy](http://mantoine.ca/) for the design idea

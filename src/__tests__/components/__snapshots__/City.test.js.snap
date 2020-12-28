@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the snapshot of City component Render the correct snapshot 1`] = `
+<div
+  className="list-one-city"
+>
+  <div
+    className="loader"
+  >
+    <h1
+      className="loading-text"
+    >
+      Loading...
+    </h1>
+  </div>
+  <a
+    href="/details/New York"
+    onClick={[Function]}
+  >
+    <h1>
+      New York
+    </h1>
+    <h2>
+      State:
+       
+      New York
+    </h2>
+  </a>
+</div>
+`;
