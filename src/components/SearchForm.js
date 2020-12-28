@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { FaSearch } from 'react-icons/fa';
 
-export const SearchForm = ({ handleSearchQueryChange, handleSearchQuerySubmit }) => (
+const SearchForm = ({ handleSearchQueryChange, handleSearchQuerySubmit }) => (
   <form onSubmit={event => handleSearchQuerySubmit(event)}>
     <input
       type="text"
