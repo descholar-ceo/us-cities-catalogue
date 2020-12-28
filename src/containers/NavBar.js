@@ -1,4 +1,3 @@
-/* eslint-disable import/no-named-as-default */
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FaHome } from 'react-icons/fa';
